@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Escape Room Didattica</title>
+  <meta name="description" content="Generatore di escape room didattiche a enigmi concatenati per la scuola secondaria.">
+  <meta name="theme-color" content="#14161b">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>">
+  <link rel="stylesheet" href="css/stile.css">
+</head>
+<body>
+
+  <header class="testata">
+    <a class="marchio" href="./" title="Torna al menu">
+      <svg class="icona" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 11V8a5 5 0 0 1 10 0v3" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><rect x="4" y="11" width="16" height="11" rx="2.5" fill="currentColor"/></svg>
+      <span>Escape Room <em>Didattica</em></span>
+    </a>
+    <div class="strumenti">
+      <button type="button" id="btn-lim" class="btn-piccolo" aria-pressed="false" title="Caratteri grandi per la LIM o il proiettore">LIM</button>
+      <button type="button" id="btn-schermo" class="btn-piccolo" title="Schermo intero">⛶ <span class="solo-largo">Schermo intero</span></button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ MENU ============ -->
+    <section id="schermata-menu" class="schermata">
+      <div class="pannello">
+        <h1 class="titolo-grande">Scegliete la vostra stanza</h1>
+        <p class="sottotitolo">Enigmi concatenati: ognuno vi consegna un frammento del codice che apre il lucchetto finale.</p>
+
+        <p id="caricamento" class="nota">Sto cercando i percorsi…</p>
+
+        <form id="form-scelta" hidden>
+          <fieldset>
+            <legend><span class="passo">1</span> Il percorso</legend>
+            <div class="griglia-scelte">
+              <label>Grado
+                <select id="sel-grado" required></select>
+              </label>
+              <label>Disciplina
+                <select id="sel-disciplina" required></select>
+              </label>
+              <label>Argomento
+                <select id="sel-argomento" required></select>
+              </label>
+            </div>
+            <div id="anteprima" class="anteprima" hidden>
+              <strong id="anteprima-titolo"></strong>
+              <span id="anteprima-dettagli"></span>
+              <a id="anteprima-link" href="#">Link diretto a questo percorso</a>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend><span class="passo">2</span> Chi gioca</legend>
+            <div class="interruttore" role="radiogroup">
+              <label><input type="radio" name="modalita" value="singolo" checked> <span>Da solo</span></label>
+              <label><input type="radio" name="modalita" value="squadra"> <span>A squadre</span></label>
+            </div>
+            <label id="etichetta-nome">Nome del giocatore <small>(facoltativo)</small>
+              <input type="text" id="nome" maxlength="40" autocomplete="off" placeholder="Un nome di fantasia">
+            </label>
+            <p class="nota">Usate nomi di fantasia: restano solo su questo dispositivo.</p>
+          </fieldset>
+
+          <fieldset>
+            <legend><span class="passo">3</span> Gli indizi costano…</legend>
+            <div class="interruttore" role="radiogroup">
+              <label><input type="radio" name="costo" value="tempo" checked> <span id="costo-tempo">tempo</span></label>
+              <label><input type="radio" name="costo" value="punti"> <span id="costo-punti">punti</span></label>
+            </div>
+          </fieldset>
+
+          <button type="submit" id="btn-entra" class="btn-principale" disabled>Entrate nella stanza</button>
+        </form>
+
+        <p id="nessun-percorso" class="errore-box" hidden>Nessun percorso disponibile. Guardate gli avvisi qui sotto.</p>
+
+        <details id="avvisi" class="avvisi" hidden>
+          <summary id="avvisi-titolo"></summary>
+          <p class="nota">Queste righe o questi file sono stati saltati. Il resto del gioco funziona normalmente.</p>
+          <ul id="avvisi-lista"></ul>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ STORIA ============ -->
+    <section id="schermata-storia" class="schermata" hidden>
+      <div class="pannello pergamena">
+        <p id="storia-etichetta" class="etichetta"></p>
+        <h1 id="storia-titolo" class="titolo-grande"></h1>
+        <div id="storia-testo" class="storia"></div>
+        <ul id="storia-regole" class="regole"></ul>
+        <div class="azioni">
+          <button type="button" id="btn-indietro" class="btn-secondario">← Cambia percorso</button>
+          <button type="button" id="btn-inizia" class="btn-principale">Inizia il conto alla rovescia</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GIOCO ============ -->
+    <section id="schermata-gioco" class="schermata" hidden>
+      <div class="cruscotto">
+        <div class="cruscotto-nome">
+          <span id="hud-titolo" class="hud-titolo"></span>
+          <span id="hud-nome" class="hud-nome"></span>
+        </div>
+        <div class="cruscotto-valori">
+          <div class="valore"><span class="valore-etichetta">Tempo</span><span id="hud-tempo" class="timer">00:00</span></div>
+          <div class="valore"><span class="valore-etichetta">Punti</span><span id="hud-punti" class="punti">0</span></div>
+          <button type="button" id="btn-esci" class="btn-piccolo" title="Esci dalla partita">Esci</button>
+        </div>
+      </div>
+
+      <div class="avanzamento" aria-label="Avanzamento">
+        <div class="barra"><div id="barra-riempimento" class="barra-riempimento"></div></div>
+        <ol id="frammenti" class="frammenti"></ol>
+      </div>
+
+      <!-- enigma -->
+      <article id="pannello-enigma" class="carta">
+        <p id="enigma-numero" class="etichetta"></p>
+        <div id="enigma-testo" class="enigma-testo"></div>
+
+        <form id="form-risposta" class="riga-risposta" autocomplete="off">
+          <label class="nascosto" for="risposta">La vostra risposta</label>
+          <input type="text" id="risposta" placeholder="Scrivete qui la risposta" autocapitalize="off" spellcheck="false">
+          <button type="submit" class="btn-principale">Verifica</button>
+        </form>
+        <p id="enigma-esito" class="esito" role="status" aria-live="polite"></p>
+
+        <div id="zona-indizio" class="zona-indizio">
+          <button type="button" id="btn-indizio" class="btn-indizio"></button>
+          <p id="indizio-testo" class="indizio" hidden></p>
+        </div>
+
+        <div id="enigma-risolto" class="risolto" hidden>
+          <p class="risolto-titolo">Esatto!</p>
+          <p>Avete trovato un frammento del codice:</p>
+          <p id="risolto-frammento" class="frammento-grande"></p>
+          <button type="button" id="btn-avanti" class="btn-principale"></button>
+        </div>
+      </article>
+
+      <!-- lucchetto finale -->
+      <article id="pannello-lucchetto" class="carta carta-lucchetto" hidden>
+        <svg id="lucchetto" class="lucchetto" viewBox="0 0 120 150" aria-hidden="true">
+          <path class="arco" d="M32 72 V46 a28 28 0 0 1 56 0 V72" fill="none" stroke-width="12" stroke-linecap="round"/>
+          <rect class="corpo" x="14" y="66" width="92" height="76" rx="14"/>
+          <circle class="foro" cx="60" cy="98" r="9"/>
+          <rect class="foro" x="56" y="101" width="8" height="20" rx="3"/>
+        </svg>
+        <h2 class="titolo-medio">Il lucchetto finale</h2>
+        <p>Unite tutti i frammenti <strong>nell'ordine in cui li avete trovati</strong> e inserite il codice completo.</p>
+        <form id="form-codice" class="riga-risposta" autocomplete="off">
+          <label class="nascosto" for="codice">Codice del lucchetto</label>
+          <input type="text" id="codice" class="input-codice" placeholder="Codice" autocapitalize="characters" spellcheck="false">
+          <button type="submit" class="btn-principale">Apri</button>
+        </form>
+        <p id="codice-esito" class="esito" role="status" aria-live="polite"></p>
+      </article>
+    </section>
+
+    <!-- ============ FINALE ============ -->
+    <section id="schermata-finale" class="schermata" hidden>
+      <div class="pannello pergamena">
+        <p class="etichetta">Porta aperta!</p>
+        <h1 id="finale-giudizio" class="titolo-grande"></h1>
+        <p id="finale-chiavi" class="chiavi" aria-hidden="true"></p>
+        <div id="finale-testo" class="storia"></div>
+
+        <div class="punteggio">
+          <p class="punteggio-totale"><span id="finale-punti">0</span> <small>punti</small></p>
+          <table id="finale-dettaglio" class="dettaglio"></table>
+        </div>
+
+        <h2 class="titolo-medio">Classifica su questo dispositivo</h2>
+        <ol id="classifica" class="classifica"></ol>
+        <button type="button" id="btn-azzera" class="btn-link">Azzera la classifica di questo percorso</button>
+
+        <div class="azioni">
+          <button type="button" id="btn-menu" class="btn-secondario">Scegli un altro percorso</button>
+          <button type="button" id="btn-rigioca" class="btn-principale">Gioca di nuovo</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="assertive" hidden></div>
+
+  <script src="js/lettore.js"></script>
+  <script src="js/gioco.js"></script>
+</body>
+</html>
