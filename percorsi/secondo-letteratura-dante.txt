@@ -1,0 +1,52 @@
+# ==============================================================
+#  PERCORSO: Dante (secondaria di secondo grado)
+# ==============================================================
+#  COME È FATTO QUESTO FILE
+#  - Le righe che iniziano con # sono commenti: il gioco le ignora.
+#  - Le righe vuote vengono ignorate.
+#
+#  INTESTAZIONE (in alto, un'informazione per riga):
+#    grado:       primo  oppure  secondo
+#    disciplina:  la materia (es. Letteratura)
+#    argomento:   l'argomento del percorso (es. Dante)
+#    titolo:      il titolo dell'escape room
+#    storia:      l'introduzione narrativa. Puoi scrivere più righe
+#                 "storia:" una sotto l'altra: diventano paragrafi.
+#    finale:      il messaggio di vittoria (anche qui più righe "finale:")
+#    tempo:       (facoltativo) minuti a disposizione. Se manca: 30.
+#
+#  ENIGMI: uno per riga, 4 parti separate dalla barra verticale |
+#    enigma | risposte accettate | indizio | frammento del codice
+#
+#  COME AGGIUNGERE O CAMBIARE UN ENIGMA
+#  - Scrivi una nuova riga sotto le altre, con le 4 parti.
+#  - L'ordine delle righe è l'ordine in cui gli enigmi si sbloccano.
+#  - Risposte accettate: separale con /    es.  terzina / terzine
+#    Maiuscole, accenti, spazi e apostrofi non contano.
+#  - Indizio: se non vuoi darlo, lascialo vuoto:  ... | risposta | | LE
+#  - Frammento: la cifra, lettera o parola che si riceve risolvendo
+#    l'enigma. Il codice del lucchetto finale è formato da tutti i
+#    frammenti uniti, nell'ordine degli enigmi (qui: un verso intero).
+#  - Per andare a capo nel testo dell'enigma scrivi //
+#  - Il carattere | non si può usare dentro i testi.
+#    (Sulla tastiera italiana: Maiusc + il tasto \ a sinistra dell'1.)
+# ==============================================================
+
+grado: secondo
+disciplina: Letteratura
+argomento: Dante
+titolo: Nella selva oscura
+tempo: 30
+storia: Vi risvegliate in un'antica biblioteca di Firenze. Le finestre sono buie e la porta è chiusa da un lucchetto a combinazione di parole.
+storia: Su un leggio c'è un manoscritto della Commedia con sei enigmi. Ogni enigma risolto vi regala una parola.
+storia: Unite le sei parole nell'ordine giusto: formeranno l'ultimo verso dell'Inferno, la frase che vi riporterà fuori.
+finale: «E quindi uscimmo a riveder le stelle.» Il lucchetto si apre e, oltre la porta, il cielo notturno è pieno di stelle.
+finale: Come Dante e Virgilio, siete usciti dall'Inferno. Complimenti!
+
+# enigma | risposte accettate | indizio | frammento
+Completa il primo verso della Commedia: // «Nel mezzo del cammin di nostra ...» | vita | Dante immagina di avere 35 anni: è a metà della sua... | QUINDI
+La Commedia è divisa in 3 cantiche: l'Inferno ha 34 canti, il Purgatorio e il Paradiso ne hanno 33 ciascuno. Quanti canti ci sono in tutto? | 100 / cento | 34 + 33 + 33 | USCIMMO
+Anagramma: GIRO VILI // È il poeta latino, autore dell'Eneide, che guida Dante attraverso l'Inferno e il Purgatorio. | Virgilio / Publio Virgilio Marone | Il suo nome completo è Publio ... Marone. | A
+Metti in ordine cronologico: // A) esilio di Dante da Firenze // B) nascita di Dante // C) morte di Dante a Ravenna // D) morte di Beatrice // E) anno in cui è ambientato il viaggio della Commedia // Scrivi le cinque lettere, per esempio ABCDE. | BDEAC | Le date sono: 1265, 1290, 1300, 1302, 1321. | RIVEDER
+Collega ogni personaggio al regno in cui Dante lo incontra: // 1) Paolo e Francesca     2) Catone     3) San Bernardo // a) Paradiso     b) Inferno     c) Purgatorio // Scrivi le tre lettere nell'ordine 1-2-3. | BCA | Paolo e Francesca sono tra i lussuriosi del V canto; Catone è il custode del Purgatorio. | LE
+Come si chiama la strofa di tre endecasillabi a rima incatenata (ABA BCB CDC...) inventata da Dante per la Commedia? | terzina / terzina dantesca / terzine / terzine dantesche | Il nome contiene il numero dei versi. | STELLE

@@ -1,0 +1,61 @@
+# ==============================================================
+#  MODELLO PER UN NUOVO PERCORSO
+# ==============================================================
+#  Come usarlo:
+#   1. Copia questo file e rinomina la copia, per esempio
+#      primo-geografia-regioni.txt  (senza spazi, finisce con .txt)
+#   2. Sostituisci i testi qui sotto con i tuoi.
+#   3. Aggiungi il nome del file in percorsi/elenco.txt
+#
+#  Questo modello NON compare nel gioco, perché non è in elenco.txt.
+#
+#  COME È FATTO IL FILE
+#  - Le righe che iniziano con # sono commenti: il gioco le ignora.
+#  - Le righe vuote vengono ignorate.
+#
+#  INTESTAZIONE (in alto, un'informazione per riga):
+#    grado:       primo  oppure  secondo
+#    disciplina:  la materia
+#    argomento:   l'argomento del percorso
+#    titolo:      il titolo dell'escape room
+#    storia:      l'introduzione narrativa. Puoi scrivere più righe
+#                 "storia:" una sotto l'altra: diventano paragrafi.
+#    finale:      il messaggio di vittoria (anche qui più righe "finale:")
+#    tempo:       (facoltativo) minuti a disposizione. Se manca: 30.
+#
+#  ENIGMI: uno per riga, 4 parti separate dalla barra verticale |
+#    enigma | risposte accettate | indizio | frammento del codice
+#
+#  - L'ordine delle righe è l'ordine in cui gli enigmi si sbloccano.
+#  - Risposte accettate: separale con /    es.  Roma / la capitale
+#    Le frazioni come 3/4 vanno bene: una / tra due cifre non separa.
+#    Maiuscole, accenti, spazi e apostrofi non contano.
+#  - Indizio: se non vuoi darlo, lascialo vuoto:  ... | risposta | | 5
+#  - Frammento: la cifra, lettera o parola che si riceve risolvendo
+#    l'enigma. Il codice del lucchetto finale è formato da tutti i
+#    frammenti uniti, nell'ordine degli enigmi.
+#  - Per andare a capo nel testo dell'enigma scrivi //
+#  - Il carattere | non si può usare dentro i testi.
+#    (Sulla tastiera italiana: Maiusc + il tasto \ a sinistra dell'1.)
+#
+#  IDEE PER ENIGMI VARI
+#  - calcolo:          "Quanto fa ...?"
+#  - anagramma:        "Riordina le lettere di ... per trovare ..."
+#  - parola mancante:  "Completa: ... ..."
+#  - cronologia:       "Metti in ordine: A) ... B) ... C) ..."  → risposta: BAC
+#  - collegamento:     "Collega 1) 2) 3) con a) b) c)"          → risposta: CAB
+#  - indovinello:      "Sono ... Chi sono?"
+# ==============================================================
+
+grado: primo
+disciplina: Nome della materia
+argomento: Nome dell'argomento
+titolo: Titolo della tua escape room
+tempo: 30
+storia: Prima riga della storia: dove si trovano i giocatori e perché sono chiusi dentro.
+storia: Seconda riga: cosa devono fare per uscire.
+finale: Messaggio di vittoria!
+
+# enigma | risposte accettate | indizio | frammento
+Testo del primo enigma? | risposta / altra risposta accettata | Un aiuto per chi è bloccato. | 1
+Testo del secondo enigma? // Questa parte va a capo. | risposta | | 2

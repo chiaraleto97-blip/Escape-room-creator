@@ -1,0 +1,52 @@
+# ==============================================================
+#  PERCORSO: Medioevo (secondaria di primo grado)
+# ==============================================================
+#  COME È FATTO QUESTO FILE
+#  - Le righe che iniziano con # sono commenti: il gioco le ignora.
+#  - Le righe vuote vengono ignorate.
+#
+#  INTESTAZIONE (in alto, un'informazione per riga):
+#    grado:       primo  oppure  secondo
+#    disciplina:  la materia (es. Storia)
+#    argomento:   l'argomento del percorso (es. Medioevo)
+#    titolo:      il titolo dell'escape room
+#    storia:      l'introduzione narrativa. Puoi scrivere più righe
+#                 "storia:" una sotto l'altra: diventano paragrafi.
+#    finale:      il messaggio di vittoria (anche qui più righe "finale:")
+#    tempo:       (facoltativo) minuti a disposizione. Se manca: 30.
+#
+#  ENIGMI: uno per riga, 4 parti separate dalla barra verticale |
+#    enigma | risposte accettate | indizio | frammento del codice
+#
+#  COME AGGIUNGERE O CAMBIARE UN ENIGMA
+#  - Scrivi una nuova riga sotto le altre, con le 4 parti.
+#  - L'ordine delle righe è l'ordine in cui gli enigmi si sbloccano.
+#  - Risposte accettate: separale con /    es.  vassallo / il vassallo
+#    Maiuscole, accenti, spazi e apostrofi non contano.
+#  - Indizio: se non vuoi darlo, lascialo vuoto:  ... | risposta | | A
+#  - Frammento: la cifra, lettera o parola che si riceve risolvendo
+#    l'enigma. Il codice del lucchetto finale è formato da tutti i
+#    frammenti uniti, nell'ordine degli enigmi.
+#  - Per andare a capo nel testo dell'enigma scrivi //
+#  - Il carattere | non si può usare dentro i testi.
+#    (Sulla tastiera italiana: Maiusc + il tasto \ a sinistra dell'1.)
+# ==============================================================
+
+grado: primo
+disciplina: Storia
+argomento: Medioevo
+titolo: Il segreto dell'abbazia
+tempo: 30
+storia: È l'anno 1150. Vi siete rifugiati per la notte nello scriptorium di un'antica abbazia, dove i monaci copiano i libri a mano.
+storia: All'improvviso il pesante portone si chiude: il frate bibliotecario ha lasciato soltanto una pergamena con sei enigmi.
+storia: Ogni enigma risolto vi darà una lettera. Unite le sei lettere e otterrete la parola segreta che apre il lucchetto del portone.
+finale: Il lucchetto scatta e il portone si apre cigolando. Il frate bibliotecario vi sorride: «Siete degni della CORONA della conoscenza!»
+finale: Complimenti, avete superato la prova dell'abbazia!
+
+# enigma | risposte accettate | indizio | frammento
+In che anno Carlo Magno fu incoronato imperatore a Roma, nella notte di Natale? | 800 / 800 d.C. / ottocento | È un numero "tondo" di tre cifre, tra 790 e 810. | C
+Anagramma: SALVALSO // Era legato al suo signore da un giuramento di fedeltà e in cambio riceveva un feudo. | vassallo / il vassallo | Comincia con la V e ha due doppie. | O
+Completa: il sistema di rapporti tra signori e vassalli, basato sulla concessione di terre in cambio di fedeltà, si chiama sistema ... | feudale | La parola deriva da "feudo". | R
+Metti in ordine cronologico, dal più antico al più recente: // A) Prima crociata // B) Caduta dell'Impero romano d'Occidente // C) Incoronazione di Carlo Magno // D) Scoperta dell'America // Scrivi le quattro lettere, per esempio ABCD. | BCAD | L'Impero romano d'Occidente cade nel 476; la prima crociata parte nel 1096. | O
+Chi fondò l'ordine dei monaci benedettini, con la regola «Ora et labora» (prega e lavora)? | San Benedetto / Benedetto / Benedetto da Norcia / San Benedetto da Norcia | Il nome dell'ordine suggerisce il nome del fondatore. | N
+Collega ogni luogo a chi ci viveva o lavorava: // 1) castello     2) monastero     3) bottega // a) monaco     b) artigiano     c) signore feudale // Scrivi le tre lettere nell'ordine 1-2-3. | CAB | Nel monastero vivono i monaci; nel castello abita il signore. | A

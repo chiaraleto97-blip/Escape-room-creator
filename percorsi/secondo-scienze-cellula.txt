@@ -1,0 +1,52 @@
+# ==============================================================
+#  PERCORSO: La cellula (secondaria di secondo grado)
+# ==============================================================
+#  COME È FATTO QUESTO FILE
+#  - Le righe che iniziano con # sono commenti: il gioco le ignora.
+#  - Le righe vuote vengono ignorate.
+#
+#  INTESTAZIONE (in alto, un'informazione per riga):
+#    grado:       primo  oppure  secondo
+#    disciplina:  la materia (es. Scienze)
+#    argomento:   l'argomento del percorso (es. La cellula)
+#    titolo:      il titolo dell'escape room
+#    storia:      l'introduzione narrativa. Puoi scrivere più righe
+#                 "storia:" una sotto l'altra: diventano paragrafi.
+#    finale:      il messaggio di vittoria (anche qui più righe "finale:")
+#    tempo:       (facoltativo) minuti a disposizione. Se manca: 30.
+#
+#  ENIGMI: uno per riga, 4 parti separate dalla barra verticale |
+#    enigma | risposte accettate | indizio | frammento del codice
+#
+#  COME AGGIUNGERE O CAMBIARE UN ENIGMA
+#  - Scrivi una nuova riga sotto le altre, con le 4 parti.
+#  - L'ordine delle righe è l'ordine in cui gli enigmi si sbloccano.
+#  - Risposte accettate: separale con /    es.  ribosoma / ribosomi
+#    Maiuscole, accenti, spazi e apostrofi non contano.
+#  - Indizio: se non vuoi darlo, lascialo vuoto:  ... | risposta | | CO
+#  - Frammento: la cifra, lettera o parola che si riceve risolvendo
+#    l'enigma. Il codice del lucchetto finale è formato da tutti i
+#    frammenti uniti, nell'ordine degli enigmi.
+#  - Per andare a capo nel testo dell'enigma scrivi //
+#  - Il carattere | non si può usare dentro i testi.
+#    (Sulla tastiera italiana: Maiusc + il tasto \ a sinistra dell'1.)
+# ==============================================================
+
+grado: secondo
+disciplina: Scienze
+argomento: La cellula
+titolo: Quarantena nel laboratorio B-7
+tempo: 30
+storia: Laboratorio di biologia B-7, ore 11:42. Suona un allarme e le porte si sigillano: è scattata la procedura di quarantena.
+storia: Per uscire dovete digitare nel terminale la password d'emergenza: il nome di una struttura cellulare, divisa in sei frammenti.
+storia: Ogni enigma risolto sblocca un frammento. La ventilazione si spegnerà tra poco: al lavoro!
+finale: ACCESSO CONSENTITO. La porta si apre con un sibilo: la password era ENDOPLASMATICO, come il reticolo che produce proteine e lipidi nella cellula.
+finale: Ottimo lavoro, biologi: la quarantena è terminata!
+
+# enigma | risposte accettate | indizio | frammento
+Quale organulo è chiamato la "centrale energetica" della cellula, perché produce ATP con la respirazione cellulare? | mitocondrio / mitocondri / il mitocondrio / i mitocondri | Ha una doppia membrana e possiede un proprio DNA. | EN
+Anagramma: BIOSMORA // Struttura priva di membrana in cui avviene la sintesi delle proteine. | ribosoma / ribosomi / il ribosoma | Si trova libero nel citoplasma o attaccato al reticolo endoplasmatico ruvido. | DO
+Un batterio si divide in due ogni 20 minuti. Partendo da un solo batterio, quanti batteri ci saranno dopo 2 ore? | 64 / sessantaquattro | In 2 ore avvengono 6 divisioni e ogni volta il numero raddoppia: 2 × 2 × 2 × 2 × 2 × 2. | PLA
+Completa: secondo il modello a mosaico fluido, la membrana plasmatica è formata da un doppio strato di ... in cui sono immerse le proteine. | fosfolipidi / fosfolipide | Sono lipidi con una "testa" che contiene un gruppo fosfato. | SMA
+Metti in ordine le fasi della mitosi: // A) anafase     B) profase     C) telofase     D) metafase // Scrivi le quattro lettere nell'ordine giusto. | BDAC | Ricordate la sigla P-M-A-T. | TI
+Collega ogni struttura alla sua funzione: // 1) cloroplasto     2) lisosoma     3) apparato di Golgi // a) digerisce sostanze e organuli danneggiati // b) svolge la fotosintesi // c) modifica, smista e spedisce le proteine // Scrivi le tre lettere nell'ordine 1-2-3. | BAC | Il cloroplasto contiene la clorofilla e si trova solo nelle cellule vegetali. | CO

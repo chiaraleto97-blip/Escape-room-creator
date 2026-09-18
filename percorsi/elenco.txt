@@ -1,0 +1,21 @@
+# ==============================================================
+#  ELENCO DEI PERCORSI
+# ==============================================================
+#  Il gioco carica SOLO i file scritti qui sotto, uno per riga.
+#
+#  Per aggiungere un nuovo percorso:
+#   1. crea il file .txt nella cartella "percorsi"
+#      (puoi copiare "modello-percorso.txt" e rinominarlo);
+#   2. scrivi qui sotto il nome del file, esattamente uguale
+#      (maiuscole, trattini ed estensione .txt compresi).
+#
+#  Per nascondere un percorso senza cancellarlo, metti un #
+#  all'inizio della sua riga.
+#
+#  Le righe che iniziano con # sono commenti e vengono ignorate.
+# ==============================================================
+
+primo-matematica-frazioni.txt
+primo-storia-medioevo.txt
+secondo-scienze-cellula.txt
+secondo-letteratura-dante.txt
