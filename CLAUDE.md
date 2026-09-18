@@ -19,6 +19,14 @@ Repository pubblico: https://github.com/chiaraleto97-blip/Escape-room-creator
 - Il formato di questi file deve essere facile da leggere e scrivere a mano,
   con istruzioni in italiano in cima al file quando serve.
 
+## Percorsi del gioco
+- Ogni percorso è un file `.txt` in `percorsi/`, elencato in `percorsi/elenco.txt`
+  (GitHub Pages non permette di elencare le cartelle, quindi serve l'elenco).
+- Formato descritto nel README e in cima a ogni file; `percorsi/modello-percorso.txt`
+  è il modello da copiare (non è in elenco).
+- Un file o una riga scritti male vanno saltati e segnalati (file + riga), mai bloccare il gioco.
+- Prova in locale: `python -m http.server 8000` e poi http://localhost:8000
+
 ## Git
 - Commit piccoli e frequenti, con messaggi in italiano che spiegano cosa è cambiato.
 - Usare solo `git` da riga di comando, mai `gh` (GitHub CLI non è installata).
